@@ -3,6 +3,9 @@
 # Run only the preprocess rules
 snakemake --use-conda --cores all \
     --snakefile "../brieflow/workflow/Snakefile" \
-    --configfile "config/config.yml" \
+    --configfile "screen.yaml" \
     --rerun-triggers mtime \
-    --until all_preprocess -n
+    --until all_preprocess #-n flag for dry run
+
+
+

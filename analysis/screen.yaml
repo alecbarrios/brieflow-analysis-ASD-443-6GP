@@ -1,60 +1,27 @@
-# Screen Information
-experiment:
-  id: ""  # Experiment identifier
-  notebook_entries: ""  # Links or references to lab notebook entries
-  dates: 
-    start: ""
-    end: ""
 
-# Cellular Conditions
-cellular:
-  cell_line: ""  # e.g., HeLa, HEK293, etc.
-  imaging_timepoint: ""  # When imaging occurred after treatment
-  treatment:
-    summary: ""  # Brief description of treatment
-    details: ""  # Detailed protocol or conditions
-  plates: ""  # Number of plates
-  wells_per_plate: ""  # Number of wells per plate
+# ~BrieFlow analysis configuration file~
 
-# Sequencing by Synthesis (SBS)
-sbs:
-  cycles: ""  # Number of cycles
-  cycle_order: ""  # Order of cycles
-  background_channel: ""  # Suggested background channel
-  library_details:
-    number_of_genes: ""
-    guides_per_gene: ""
-    other_information: ""
+# All paths are resolved relative to the directory the workflow is run from.
 
-# Phenotype (PH) Steps
-phenotype:
-  background_channel_cell: ""  # For cell segmentation
-  background_channel_body: ""  # For body (e.g. parasite) segmentation
-  
-  # Rounds of staining/imaging (in order they were stained for each round)
-  # Add more rounds as needed
-  rounds:
-    - round_number: 1
-      stains:
-        - name: "DAPI"  # Name of stain/antibody
-          marker_of: "Nuclei"  # What it marks
-          channel: "DAPI"  # Channel used (e.g., DAPI, CY3)
-        - name: "ConA"
-          marker_of: "Cytoplasm"
-          channel: "AF750"
-    
-    - round_number: 2
-      stains:
-        - name: ""  # Name of stain/antibody
-          marker_of: ""  # What it marks
-          channel: ""  # Channel used (e.g., DAPI, CY3)
-        - name: ""
-          marker_of: ""
-          channel: ""
-
-# Data Generated
-data:
-  storage_format: ""  # e.g., .nd2, .tiff
-  location: "/lab/.."  # Base path for data storage
-  
-  notes: ""  # Any additional notes about the data or file naming conventions
+# Parameters:
+all:
+  root_fp: brieflow_output/
+preprocess:
+  sbs_samples_fp: config/sbs_samples.tsv
+  sbs_combo_fp: config/sbs_combo.tsv
+  phenotype_samples_fp: config/phenotype_samples.tsv
+  phenotype_combo_fp: config/phenotype_combo.tsv
+  sbs_data_format: nd2
+  sbs_data_organization: tile
+  sbs_channel_order: null
+  sbs_channel_order_flip: false
+  sbs_n_z_planes: null
+  sbs_metadata_samples_df_fp: null
+  phenotype_data_format: nd2
+  phenotype_data_organization: tile
+  phenotype_channel_order: null
+  phenotype_channel_order_flip: false
+  phenotype_round_order: null
+  phenotype_n_z_planes: null
+  phenotype_metadata_samples_df_fp: null
+  sample_fraction: 1.0
