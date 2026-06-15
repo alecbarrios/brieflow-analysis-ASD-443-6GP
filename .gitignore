@@ -2,3 +2,4 @@
 analysis/.snakemake/
 analysis/slurm/slurm_output/
 analysis/brieflow_output/
+__pycache__/

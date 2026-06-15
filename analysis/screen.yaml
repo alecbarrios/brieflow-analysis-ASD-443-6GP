@@ -25,3 +25,65 @@ preprocess:
   phenotype_n_z_planes: null
   phenotype_metadata_samples_df_fp: null
   sample_fraction: 1.0
+sbs:
+  alignment_method: DAPI
+  channel_names:
+  - DAPI
+  - T
+  - G
+  - A
+  - C
+  upsample_factor: 4
+  window: 1.2
+  skip_cycles_indices: null
+  manual_background_cycle_index: null
+  manual_channel_mapping: null
+  extra_channel_indices:
+  - 0
+  max_filter_width: 3
+  spot_detection_method: spotiflow
+  dapi_cycle: 2
+  dapi_cycle_index: 1
+  cyto_cycle: 1
+  cyto_cycle_index: 0
+  dapi_index: 0
+  cyto_index: 3
+  segmentation_method: cellpose
+  gpu: false
+  reconcile: contained_in_cells
+  segment_cells: true
+  df_barcode_library_fp: config/barcode_library.tsv
+  threshold_peaks: 0
+  call_reads_method: median
+  bases:
+  - T
+  - G
+  - A
+  - C
+  q_min: 0.1
+  error_correct: true
+  sort_calls: peak
+  n_barcodes: 2
+  barcode_type: multi
+  max_distance: 1
+  map_start: 1
+  map_end: 12
+  prefix_map: prefix_map
+  recomb_start: 13
+  recomb_end: 17
+  prefix_recomb: prefix_recomb
+  recomb_filter_col: Q_recomb
+  recomb_q_thresh: 0.1
+  spotiflow_cycle_index: 0
+  spotiflow_model: general
+  spotiflow_threshold: 0.3
+  spotiflow_min_distance: 3
+  spotiflow_remove_index:
+  - 0
+  nuclei_diameter: 8.214724333230157
+  cell_diameter: 16.234549139418032
+  nuclei_flow_threshold: 0.4
+  nuclei_cellprob_threshold: 0
+  cell_flow_threshold: 1
+  cell_cellprob_threshold: 0
+  cellpose_model: cyto3
