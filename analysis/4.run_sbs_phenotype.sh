@@ -5,4 +5,4 @@ snakemake --use-conda --cores all \
     --snakefile "../brieflow/workflow/Snakefile" \
     --configfile "screen.yaml" \
     --rerun-triggers mtime \
-    --until all_sbs #all_phenotype 
+    --until all_sbs -n #all_phenotype 
