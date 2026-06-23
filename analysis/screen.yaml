@@ -24,7 +24,7 @@ preprocess:
   phenotype_round_order: null
   phenotype_n_z_planes: null
   phenotype_metadata_samples_df_fp: null
-  sample_fraction: 1.0
+  sample_fraction: 0.8
 sbs:
   alignment_method: DAPI
   channel_names:
@@ -80,10 +80,54 @@ sbs:
   spotiflow_min_distance: 3
   spotiflow_remove_index:
   - 0
-  nuclei_diameter: 8.214724333230157
-  cell_diameter: 16.234549139418032
+  nuclei_diameter: 8.136857890256438
+  cell_diameter: 16.545286401814263
   nuclei_flow_threshold: 0.4
   nuclei_cellprob_threshold: 0
   cell_flow_threshold: 1
   cell_cellprob_threshold: 0
   cellpose_model: cyto3
+phenotype:
+  foci_channel_index: null
+  channel_names:
+  - DAPI
+  - CAMKIIA
+  - DCX
+  - NeuN
+  - GFP
+  align: true
+  dapi_index: 0
+  cyto_index: 4
+  segmentation_method: cellpose
+  reconcile: contained_in_cells
+  gpu: false
+  segment_cells: true
+  cp_method: cp_emulator
+  nuclei_diameter: 9.338937149588881
+  cell_diameter: 19.34767237039479
+  nuclei_flow_threshold: 0.4
+  nuclei_cellprob_threshold: 0.0
+  cell_flow_threshold: 1
+  cell_cellprob_threshold: 0
+  cellpose_model: cyto3
+  alignments:
+    1:
+      window: 1.2
+      upsample_factor: 4
+      steps:
+      - target: 0
+        source: 1
+        riders: []
+        remove_channel: false
+      - target: 0
+        source: 2
+        riders: []
+        remove_channel: false
+      - target: 0
+        source: 3
+        riders: []
+        remove_channel: false
+      - target: 0
+        source: 4
+        riders: []
+        remove_channel: false
